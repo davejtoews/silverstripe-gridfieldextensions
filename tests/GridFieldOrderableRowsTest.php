@@ -118,12 +118,12 @@ class GridFieldOrderableRowsTest extends SapphireTest
 
         $result = $orderable->getColumnContent($grid, $record, 'irrelevant');
 
-        $this->assertStringContainsString(
+        $this->assertContains(
             'Belongings[GridFieldEditableColumns][' . $record->ID . '][Sort]',
             $result,
             'The field name is indexed under the record\'s ID'
         );
-        $this->assertStringContainsString(
+        $this->assertContains(
             'value="' . $intermediary->Sort . '"',
             $result,
             'The value comes from the MMTL intermediary Sort value'
@@ -152,12 +152,12 @@ class GridFieldOrderableRowsTest extends SapphireTest
 
         $result = $orderable->getColumnContent($grid, $record, 'irrelevant');
 
-        $this->assertStringContainsString(
+        $this->assertContains(
             'Children[GridFieldEditableColumns][' . $record->ID . '][Sort]',
             $result,
             'The field name is indexed under the record\'s ID'
         );
-        $this->assertStringContainsString(
+        $this->assertContains(
             'value="' . $intermediary->Sort . '"',
             $result,
             'The value comes from the MMTL intermediary Sort value'

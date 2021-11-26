@@ -30,13 +30,13 @@ class OrderableRowsThroughVersionedTest extends SapphireTest
 
     protected $originalReadingMode;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         parent::setUp();
         $this->orignalReadingMode = Versioned::get_reading_mode();
     }
 
-    protected function tearDown(): void
+    protected function tearDown()
     {
         Versioned::set_reading_mode($this->originalReadingMode);
         unset($this->originalReadingMode);
